@@ -113,7 +113,9 @@ public: // methods
 	// constructor just initialises private data
 	AStarSearch( int MaxNodes = 1000 ) :
 		m_AllocateNodeCount(0),
+#if USE_FSA_MEMORY
 		m_FixedSizeAllocator( MaxNodes ),
+#endif
 		m_State( SEARCH_STATE_NOT_INITIALISED ),
 		m_CurrentSolutionNode( NULL ),
 		m_CancelRequest( false )
@@ -730,8 +732,10 @@ private: // data
 
 	Node *m_CurrentSolutionNode;
 
+#if USE_FSA_MEMORY
 	// Memory
  	FixedSizeAllocator<Node> m_FixedSizeAllocator;
+#endif
 	
 	//Debug : need to keep these two iterators around
 	// for the user Dbg functions
