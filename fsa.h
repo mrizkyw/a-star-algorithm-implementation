@@ -109,7 +109,7 @@ public: // methods
 	~FixedSizeAllocator()
 	{
 		// Free up the memory
-		delete [] m_pMemory;
+		delete [] (char *) m_pMemory;
 	}
 
 	// Allocate a new USER_TYPE and return a pointer to it 
