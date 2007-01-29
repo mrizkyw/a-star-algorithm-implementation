@@ -76,7 +76,7 @@ public: // methods
 	{
 		// Allocate enough memory for the maximum number of elements
 
-		char *pMem = new char[ m_MaxElements * sizeof FSA_ELEMENT ];
+		char *pMem = new char[ m_MaxElements * sizeof(FSA_ELEMENT) ];
 
 		m_pMemory = (FSA_ELEMENT *) pMem; 
 
